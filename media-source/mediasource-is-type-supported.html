@@ -59,7 +59,10 @@
               'audio/mp4;codecs="mp4a"',
               'audio/mp4;codecs="mp4a.40"',
               'audio/mp4;codecs="mp4a.40."',
-              'audio/mp4;codecs="mp4a.67.3"'
+              'audio/mp4;codecs="mp4a.67.3"',
+              'video/webm;codecs="vp09"',
+              'video/webm;codecs="vp09......."',
+              'video/webm;codecs="vp09.66.00.02"',
           ], false, 'Test invalid codec ID');
 
           test_type_support([
@@ -69,6 +72,12 @@
               'video/webm;codecs="vorbis, vp8"',
               'audio/webm;codecs="vorbis"',
               'AUDIO/WEBM;CODECS="vorbis"',
+              // VP9, Profile 0, level 1, bit depth 8 (later fields defaulted)
+              'video/webm; codecs="vp09.00.10.08"',
+              // VP9, Profile 0, level 1, bit depth 8, 4:2:0 chroma subsampling (later fields defaulted)
+              'video/webm; codecs="vp09.01.20.08.01"',
+              // VP9, Profile 1, level 2, bit depth 8, 4:2:0 chroma subsampling, REC709 color/transfer/matrix, "legal" luma/chroma range
+              'video/webm; codecs="vp09.01.20.08.01.01.01.01.00"',
           ], true, 'Test valid WebM type');
 
           test_type_support([
