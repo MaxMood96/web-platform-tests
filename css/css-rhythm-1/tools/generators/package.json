@@ -4,15 +4,21 @@
   "description": "Generators ==========",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.11.1",
-    "ejs": "^2.4.1",
-    "gulp": "^3.9.1",
-    "gulp-ejs": "^2.1.1",
+    "ejs": "^3.1.6",
+    "gulp": "^4.0.0",
+    "gulp-ejs": "^5.0.0",
     "gulp-rename": "^1.2.2"
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
