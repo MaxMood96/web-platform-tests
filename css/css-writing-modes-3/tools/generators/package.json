@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "@snyk/protect": "latest"
+  },
   "devDependencies": {
     "browser-sync": "^2.10.1",
     "connect": "^3.4.0",
     "ejs": "^2.3.1",
-    "gulp": "^3.8.11",
+    "gulp": "^4.0.0",
     "gulp-ejs": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "minimist": "^1.1.1",
@@ -16,8 +18,11 @@
     "serve-static": "^1.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "snyk": true
 }
