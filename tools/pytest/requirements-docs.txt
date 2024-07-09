@@ -1,3 +1,4 @@
 sphinx==1.2.3
 regendoc
 pyyaml
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
